@@ -11,6 +11,7 @@ class EmailSender{
 	protected $emailSubject; 
 	protected $emailBody; 
 	protected $timestamp; 
+	protected $addTime= false; 
 
 	function __construct(){
 		$this->timestamp = time(); 
@@ -39,12 +40,29 @@ class EmailSender{
 	}
 
 
+	/* Change the add-time-to-email flag 
+	 * using boolean logic 
+	 */ 
+	function setAddTIme($data){
+		$this->addTime = $data; 
+	}
+
+
+
+
 	/* Send the mailing to the email 
 	 * addresses in the distribution 
 	 * list. 
 	 */ 
 	function sendMailing(){
 		if ((count($this->emailUsers)>0) && $this->emailSubject && $this->emailBody){
+			if ($this->addTime){
+				//append timestamp logic to the email 
+				$additionalString = "\n"; 
+				$additionalString .="This emai was sent on ".date('l jS Y', $this->timestamp);
+				$this->emailBody .= $additionalString;
+			}
+
 		foreach($this->emailUsers as $emailUser){		
 			mail($emailUser, $this->emailSubject, $this->emailBody); 
 		}
@@ -60,6 +78,13 @@ class EmailSender{
 
 
 }
+
+
+
+
+
+
+
 
 
 
