@@ -47,8 +47,17 @@ class EmailSender{
 		$this->addTime = $data; 
 	}
 
+	/* Set a previous array as the email Users 
+	 */ 
+	function setEmailList($data){
+		$this->emailUsers = $data; 
+	}
 
-
+	/* Reset the email users list 
+	 */ 
+	function resetEmailList(){
+		$this->emailUsers = array(); 
+	}
 
 	/* Send the mailing to the email 
 	 * addresses in the distribution 
@@ -63,18 +72,12 @@ class EmailSender{
 				$this->emailBody .= $additionalString;
 			}
 
-		foreach($this->emailUsers as $emailUser){		
-			mail($emailUser, $this->emailSubject, $this->emailBody); 
+			foreach($this->emailUsers as $emailUser){		
+				mail($emailUser, $this->emailSubject, $this->emailBody); 
+			}
 		}
-	}
 
 	}
-
-
-
-
-
-
 
 
 }
