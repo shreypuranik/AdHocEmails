@@ -3,6 +3,7 @@
 /* A very generic and basic Email Sender 
  * class. Requires mail to be installed on 
  * server. 
+ * Committed April 2014
  */ 
 
 class EmailSender{
