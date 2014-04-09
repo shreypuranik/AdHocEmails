@@ -15,7 +15,7 @@ class EmailSenderLogger extends EmailSender{
 
 	function __construct(){
 		parent::__construct(); 
-        $this->setDB(); 
+       	$this->setDB(); 
 
 	}
 
@@ -42,11 +42,11 @@ class EmailSenderLogger extends EmailSender{
 				$this->emailBody .= $additionalString;
 			}
 
-		foreach($this->emailUsers as $emailUser){		
-			mail($emailUser, $this->emailSubject, $this->emailBody); 
-			$this->logEmail($emailUser, $this->emailSubject);
+			foreach($this->emailUsers as $emailUser){		
+				mail($emailUser, $this->emailSubject, $this->emailBody); 
+				$this->logEmail($emailUser, $this->emailSubject);
+			}
 		}
-	}
 
 	}
 }
