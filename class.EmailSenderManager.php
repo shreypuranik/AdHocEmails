@@ -70,11 +70,6 @@ class EmailSenderManager{
 
 }
 
-$manager = new EmailSenderManager(); 
-$manager->setQueryMailUserEmail('shrey@shreypuranik.co.uk');
-$manager->setQueryMailTitle('iTunes Top 10'); 
-$results = $manager->getSoleTitleQuery(); 
-var_dump($results); 
 
 
 
