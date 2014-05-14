@@ -20,10 +20,19 @@ class EmailSenderLogger extends EmailSender{
 
 	}
 
+
+    /* Set the database connections here
+     * REPLACE WITH REAL CREDENTIALS!
+     */
+
 	function setDB(){
 		$this->db = DB::connect('mysql://'user':'password'@'host'/'database_name'');
 	}
 
+    /* Insert email log into DB
+     * (See additional text file for SQL
+     * to create table)
+     */
 	function logEmail($email, $title){
 		$this->db->query("INSERT INTO `EmailLogs` (`useremail`, `emailtitle`) VALUES (?, ?)", array($email, $title));
 	}

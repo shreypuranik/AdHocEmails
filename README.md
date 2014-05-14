@@ -1,7 +1,7 @@
 AdHocEmails
 ===========
 
-Last updated 9th April 2014
+Last updated 14th May 2014
 
 This download contains 2 PHP classes. 
 
@@ -31,7 +31,7 @@ Set methods as outlined above
 
 When sending the emails, this class will log the email recipient email address, and the email title. 
 
-Database schema to be committed in shortly. 
+CREATE SQL now in tableSQL.txt - simply run in your favourite MYSQL editor to create a table for logging.
 
 
 
