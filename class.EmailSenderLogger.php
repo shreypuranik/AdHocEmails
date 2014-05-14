@@ -9,6 +9,7 @@ include_once("DB.php");
  *
  * Uses the PEAR DB files to connect to 
  * MYSQL. Please download this separately
+ * (Not part of this repo)
  */
 
 class EmailSenderLogger extends EmailSender{
