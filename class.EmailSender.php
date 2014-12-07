@@ -13,6 +13,7 @@ class EmailSender{
 	protected $emailBody; 
 	protected $timestamp; 
 	protected $addTime= false;
+    protected $useHeaders = false;
     protected $headers = "From: Your Tool Name <you@yourdomain.com>";
 
 
@@ -76,7 +77,12 @@ class EmailSender{
 			}
 
 			foreach($this->emailUsers as $emailUser){
+                if($this->useHeaders){
                 mail($emailUser, $this->emailSubject, $this->emailBody, $this->headers);
+                }
+                else {
+                    mail($emailUser, $this->emailSubject, $this->emailBody);
+                }
             }
 		}
 
