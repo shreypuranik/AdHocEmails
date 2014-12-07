@@ -12,7 +12,9 @@ class EmailSender{
 	protected $emailSubject; 
 	protected $emailBody; 
 	protected $timestamp; 
-	protected $addTime= false; 
+	protected $addTime= false;
+    protected $headers = "From: Your Tool Name <you@yourdomain.com>";
+
 
 	function __construct(){
 		$this->timestamp = time(); 
@@ -73,9 +75,9 @@ class EmailSender{
 				$this->emailBody .= $additionalString;
 			}
 
-			foreach($this->emailUsers as $emailUser){		
-				mail($emailUser, $this->emailSubject, $this->emailBody); 
-			}
+			foreach($this->emailUsers as $emailUser){
+                mail($emailUser, $this->emailSubject, $this->emailBody, $this->headers);
+            }
 		}
 
 	}
