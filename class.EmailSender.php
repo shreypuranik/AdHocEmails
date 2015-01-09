@@ -14,6 +14,7 @@ class EmailSender{
 	protected $timestamp; 
 	protected $addTime= false;
     protected $useHeaders = false;
+    /* Add additional headers */
     protected $headers = "From: Your Tool Name <you@yourdomain.com>";
 
 
