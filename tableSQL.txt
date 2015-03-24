@@ -1,5 +1,5 @@
 -- CREATE SQL for basic table
--- Please index and expand as you see fit
+--  Please index and expand as you see fit
 
 CREATE TABLE `EmailLogs` (
   `useremail` varchar(200) NOT NULL,
