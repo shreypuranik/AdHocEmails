@@ -6,7 +6,8 @@
  * Committed April 2014
  */ 
 
-class EmailSender{
+class EmailSender
+{
 
 	protected $emailUsers = array(); //an array of email addresses
 	protected $emailSubject; 
@@ -18,7 +19,8 @@ class EmailSender{
     protected $headers = "From: Your Tool Name <you@yourdomain.com>";
 
 
-	function __construct(){
+	function __construct()
+    {
 		$this->timestamp = time(); 
 	}
 
@@ -26,21 +28,24 @@ class EmailSender{
 	/* Set the subject (title) 
 	 * of the email 
 	 */ 
-	function setEmailSubject($data){
+	function setEmailSubject($data)
+    {
 		$this->emailSubject = $data; 
 	}
 
 	/* Set the body (content)
 	 * of the email 
 	 */ 
-	function setEmailBody($data){
+	function setEmailBody($data)
+    {
 		$this->emailBody = $data; 
 	}
 
 	/* Assign a new email address to
 	 * the mailing list 
 	 */ 
-	function addEmailToMailing($data){
+	function addEmailToMailing($data)
+    {
 		$this->emailUsers[] = $data; 
 	}
 
@@ -48,19 +53,22 @@ class EmailSender{
 	/* Change the add-time-to-email flag 
 	 * using boolean logic 
 	 */ 
-	function setAddTIme($data){
+	function setAddTIme($data)
+    {
 		$this->addTime = $data; 
 	}
 
 	/* Set a previous array as the email Users 
 	 */ 
-	function setEmailList($data){
+	function setEmailList($data)
+    {
 		$this->emailUsers = $data; 
 	}
 
 	/* Reset the email users list 
 	 */ 
-	function resetEmailList(){
+	function resetEmailList()
+    {
 		$this->emailUsers = array(); 
 	}
 
@@ -68,7 +76,8 @@ class EmailSender{
 	 * addresses in the distribution 
 	 * list. 
 	 */ 
-	function sendMailing(){
+	function sendMailing()
+    {
 		if ((count($this->emailUsers)>0) && $this->emailSubject && $this->emailBody){
 			if ($this->addTime){
 				//append timestamp logic to the email 
@@ -91,18 +100,3 @@ class EmailSender{
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

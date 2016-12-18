@@ -12,9 +12,11 @@ include_once("DB.php");
  * (Not part of this repo)
  */
 
-class EmailSenderLogger extends EmailSender{
+class EmailSenderLogger extends EmailSender
+{
 
-	function __construct(){
+	function __construct()
+    {
 		parent::__construct(); 
        	$this->setDB(); 
 
@@ -25,7 +27,8 @@ class EmailSenderLogger extends EmailSender{
      * REPLACE WITH REAL CREDENTIALS!
      */
 
-	function setDB(){
+	function setDB()
+    {
 		$this->db = DB::connect('mysql://'user':'password'@'host'/'database_name'');
 	}
 
@@ -33,7 +36,8 @@ class EmailSenderLogger extends EmailSender{
      * (See additional text file for SQL
      * to create table)
      */
-	function logEmail($email, $title){
+	function logEmail($email, $title)
+    {
 		$this->db->query("INSERT INTO `EmailLogs` (`useremail`, `emailtitle`) VALUES (?, ?)", array($email, $title));
 	}
 
@@ -43,7 +47,8 @@ class EmailSenderLogger extends EmailSender{
 	 * addresses in the distribution 
 	 * list. 
 	 */ 
-	function sendMailing(){
+	function sendMailing()
+    {
 		if ((count($this->emailUsers)>0) && $this->emailSubject && $this->emailBody){
 			if ($this->addTime){
 				//append timestamp logic to the email 
