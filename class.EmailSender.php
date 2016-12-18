@@ -1,4 +1,4 @@
-<?
+<?php
 
 /* A very generic and basic Email Sender 
  * class. Requires mail to be installed on 

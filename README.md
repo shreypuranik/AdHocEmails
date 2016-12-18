@@ -3,7 +3,7 @@ AdHocEmails
 
 Last updated 14th May 2014
 
-This download contains 2 PHP classes. 
+This download contains 2 PHP classes. It also requires the PEAR DB class, but as I didn't write it,  I didn't want to include it in this repository.
 
 SIMPLE USE: Using the EmailSender class 
 

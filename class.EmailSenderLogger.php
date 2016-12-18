@@ -1,4 +1,4 @@
-<?
+<?php
 include_once("class.EmailSender.php");
 include_once("DB.php"); 
 
